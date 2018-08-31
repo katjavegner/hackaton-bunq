@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "material-icons-react": "^1.0.2",
+    "mobx": "^5.1.0",
+    "mobx-react": "^5.2.5",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "reactstrap": "^6.4.0"
