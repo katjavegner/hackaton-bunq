@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Row, Button, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default class FullCampaign extends Component {
@@ -9,27 +9,36 @@ super()
     render() {
         const { match } = this.props;
       return (
-        <Fragment>  
-            <Row>
-                <Col xs={4}>
-                    <h1>Campaigns</h1>
-                </Col>
-                <Col xsOffset={4} xs={4}>
-                    <Button>
-                        <Link to={`${match.url}/new`}>+ new campaign</Link>
-                    </Button>
-                </Col>
+        <div className="ListOfCampaigns">  
+            <Row className="AddNewCampaign">
+                <Button className="ButtonNewCampaign">
+                    <Link to={`${match.url}/new`}>add new campaign</Link>
+                </Button>
             </Row> 
-            <Row>
-                
-                <Col xs={6}>
-                    <Link to={`${match.url}/1`}>CampaignName</Link>
-                </Col>
-                <Col xsOffset={2} xs={4}>
-                    <Button>Deactivate</Button>
-                </Col>
+            <Row className="AllCampaigns">
+                <Table responsive>
+                    <thead>
+                        <tr>
+                        <th>Campaign name</th>
+                        <th>Campaign description</th>
+                        <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td><Link to={`${match.url}/1`}>CampaignName</Link></td>
+                        <td>Table cell</td>
+                        <td><Button className="ButtonDeactivate">deactivate</Button></td>    
+                        </tr>
+                        <tr>
+                        <td><Link to={`${match.url}/2`}>CampaignName</Link></td>
+                        <td>Table cell</td>
+                        <td><Button className="ButtonDeactivate">deactivate</Button></td>
+                        </tr>
+                    </tbody>
+                </Table>              
             </Row>
-        </Fragment>  
+        </div>  
       );
     }
   }

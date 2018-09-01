@@ -22,15 +22,16 @@ export default class CompanyDescription extends Component {
 
     render() {
       return (
-        <Fragment className="companyPage">
+        <Fragment >
             <FormGroup controlId="companyDescription">
                 <Row className="companyName">
-                    <Col xs={4} sm={4} md={4} lg={4}>
+                    <Col xs={4} >
                         <ControlLabel className="inputDescription">Company name</ControlLabel>
                     </Col>
-                    <Col xs={4} sm={4} md={4} lg={4}>
+                    <Col xs={8}>
                         <FormControl
                             className="inputField"
+                            disabled = {true}
                             type="text"
                             value={this.state.companyName || ''}
                             onChange={(e)=>this.handleChange(e,'companyName')}
@@ -38,39 +39,42 @@ export default class CompanyDescription extends Component {
                     </Col>
                 </Row>
                 <Row className="companyDescirption">
-                    <Col xs={4} sm={4} md={4} lg={4}>
+                <Col xs={4} >
                         <ControlLabel className="inputDescription">Company description</ControlLabel>
                     </Col>
-                    <Col xs={4} sm={4} md={4} lg={4}>
+                    <Col xs={8}>
                         <FormControl
                             className="inputField"
                             type="text"
+                            disabled = {true}
                             value={this.state.companyDescripton || ''}
                             onChange={(e)=>this.handleChange(e,'companyDescripton')}
                         />
                     </Col>
                 </Row>
                 <Row className="companyTransaction">
-                    <Col xs={4} sm={4} md={4} lg={4}>
+                <Col xs={4} >
                         <ControlLabel className="inputMccCode">Transaction Name</ControlLabel>
                     </Col>
-                    <Col xs={4} sm={4} md={4} lg={4}>
+                    <Col xs={8}>
                         <FormControl
                             className="inputField"
                             type="text"
+                            disabled = {true}
                             value={this.state.companyTransaction || ''}
                             onChange={(e)=>this.handleChange(e,'companyTransaction')}
                         />
                     </Col>
                 </Row>
                 <Row className="companyContact">
-                    <Col xs={4} sm={4} md={4} lg={4}>
+                    <Col xs={4} >
                         <ControlLabel className="inputContact">Contact</ControlLabel>
                     </Col>
-                    <Col xs={4} sm={4} md={4} lg={4}>
+                    <Col xs={8}>
                         <FormControl
                             className="inputField"
                             type="text"
+                            disabled = {true}
                             value={this.state.companyContact || ''}
                             onChange={(e)=>this.handleChange(e,'companyContact')}
                         />

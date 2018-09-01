@@ -3,3 +3,23 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+html, body{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  background: rgb(42,184,232);
+}
+
+:root {
+  --blue-color: rgb(42,184,232); 
+  --green-blue-color: rgb(99,156,173);
+  --brown-color: rgb(157,133,123);
+  --red-color: rgb(227,106,69);
+}
+
+a{
+  color: #323A45;
+}

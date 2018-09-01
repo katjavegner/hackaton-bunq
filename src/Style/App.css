@@ -2,27 +2,123 @@
   text-align: center;
 }
 
+
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  display: block;
   height: 80px;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+ul{
+  text-align: left;
+  padding: 0;
+  margin: 60px auto;
+}
+
+ul.leftList li{
+  list-style-type: none;
+  margin: 35px auto;
+}
+
+ul.rightList li{
+  list-style-type: none;
+  margin: 22px auto;
+}
+
+.page-header{
+  border-bottom:0;
+  margin: 60px auto;
+  background: white;
+}
+.MainPage{
+  color: #323A45;
+  font-size: 24px;
+  line-height: 1.5;
+}
+.form-group, ul{
+  text-align: left;
+}
+.MainPage, .page-header{
+  text-align: center;
+}
+
+.form-group, .MainPage, .page-header, ul, .ListOfCampaigns{
+  background: white;
+  color: #323A45;
+  -webkit-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.25);
+  box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.25);
+  border-radius: 5px; 
   padding: 20px;
+  
+}
+
+.form-group label {
+  color: #323A45;
+  font-size: 14px;
+}
+
+.form-group .row{
+  margin: 20px 0;
+
+}
+
+.form-control[disabled]{
+  background-color: transparent;
+  border: none;
+}
+
+.ListOfCampaigns{
+  padding: 40px 20px;
+}
+
+.AddNewCampaign{
+  margin: 0 auto 40px;
+}
+
+.ButtonNewCampaign{
+  border: 2px solid #323A45;
+  color: #323A45;
+  text-transform: uppercase;
+  background: transparent;
+  text-shadow: none;
+}
+
+.ButtonNewCampaign:hover {
+  background-color: #323A45;
   color: white;
+  border-color: #323A45;
+}
+.ButtonNewCampaign:hover a:hover{
+  color: white;
+  text-shadow: none;
+}
+a:hover{
+  text-decoration: none;
 }
 
-.App-title {
-  font-size: 1.5em;
+.ButtonDeactivate{
+  background: transparent;
+  text-shadow: none;
+  color: rgb(157,133,123);
+  border-color: rgb(157,133,123);
 }
 
-.App-intro {
-  font-size: large;
+th{
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.table>tbody>tr>td{
+  padding: 20px 0;
+}
+.table>thead>tr>th{
+  padding: 10px 0 20px;
+  color: #323A45;
+}
+.Campaign{
+  padding: 40px 20px 60px;
+}
+.Campaign button{
+  float: right;
+
 }

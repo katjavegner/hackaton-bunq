@@ -24,12 +24,12 @@ export default class Campaign extends Component {
         let disabledInput =  campaignId !== "new" ? true : false 
 
         return (
-            <FormGroup controlId="companyDescription">
+            <FormGroup controlId="campaign" className="Campaign">
             <Row className="campaignName">
-                <Col xs={4} sm={4} md={4} lg={4}>
+            <Col xs={4}>
                     <ControlLabel className="inputDescription">Campaign name</ControlLabel>
                 </Col>
-                <Col xs={4} sm={4} md={4} lg={4}>
+                <Col xs={8}>
                     <FormControl
                         className="inputField"
                         disabled = {disabledInput}
@@ -40,10 +40,10 @@ export default class Campaign extends Component {
                 </Col>
             </Row>
             <Row className="companyDescirption">
-                <Col xs={4} sm={4} md={4} lg={4}>
+                <Col xs={4}>
                     <ControlLabel className="inputDescription">Company description</ControlLabel>
                 </Col>
-                <Col xs={4} sm={4} md={4} lg={4}>
+                <Col xs={8}>
                     <FormControl
                         className="inputField"
                         disabled = {disabledInput}
@@ -54,10 +54,10 @@ export default class Campaign extends Component {
                 </Col>
             </Row>
             <Row className="companyTransaction">
-                <Col xs={4} sm={4} md={4} lg={4}>
+            <Col xs={4}>
                     <ControlLabel className="inputMccCode">Transaction Name</ControlLabel>
                 </Col>
-                <Col xs={4} sm={4} md={4} lg={4}>
+                <Col xs={8}>
                     <FormControl
                         className="inputField"
                         disabled = {disabledInput}
@@ -68,10 +68,10 @@ export default class Campaign extends Component {
                 </Col>
             </Row>
             <Row className="companyContact">
-                <Col xs={4} sm={4} md={4} lg={4}>
+            <Col xs={4}>
                     <ControlLabel className="inputContact">Contact</ControlLabel>
                 </Col>
-                <Col xs={4} sm={4} md={4} lg={4}>
+                <Col xs={8}>
                     <FormControl
                         className="inputField"
                         disabled = {disabledInput}
@@ -81,7 +81,7 @@ export default class Campaign extends Component {
                     />
                 </Col>
             </Row>
-            {campaignId === "new" ? <Button type="Save">Submit</Button> :<Button type="Save">Disable</Button> }
+            {campaignId === "new" ? <Button className="ButtonNewCampaign" type="Save">Submit</Button> :<Button className="ButtonDeactivate" type="Save">Disable</Button> }
         </FormGroup>
         );
     }
