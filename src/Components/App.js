@@ -25,7 +25,6 @@ const App = () => (
           <Col md={4}>
             <PageHeader>
               <img alt="Streakr-logo" src={Logo} className="App-logo"/>
-              <small className="App-header">Admin</small>
             </PageHeader>
           </Col>
           <Col md={3}>

@@ -15,14 +15,15 @@ ul{
   margin: 20px auto;
 }
 
-ul.leftList li{
-  list-style-type: none;
-  margin: 35px auto;
-}
-
-ul.rightList li{
+ul.leftList li, ul.rightList li {
+  text-align: center;
   list-style-type: none;
   margin: 22px auto;
+}
+
+ul.leftList li a, ul.rightList li a {
+  color: darkblue;
+  text-decoration: underline;
 }
 
 .page-header{

@@ -42,11 +42,6 @@ export default class FullCampaign extends Component {
 
     return (
       <div className="ListOfCampaigns">
-        <Row className="AddNewCampaign">
-          <Button className="ButtonNewCampaign">
-            <Link to={`${match.url}/new`}>add new campaign</Link>
-          </Button>
-        </Row>
         <Row className="AllCampaigns">
           <Table responsive>
             <thead>
@@ -59,6 +54,11 @@ export default class FullCampaign extends Component {
             </thead>
             <Campaigns campaigns={this.state.campaigns} />
           </Table>
+        </Row>
+        <Row className="AddNewCampaign">
+          <Button className="ButtonNewCampaign">
+            <Link to={`${match.url}/new`}>add new campaign</Link>
+          </Button>
         </Row>
       </div>
     );
