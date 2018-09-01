@@ -1,44 +1,66 @@
-import React, { Component } from 'react';
-import { Row, Button, Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Row, Button, Table} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+
+var Config = require('../config');
 
 export default class FullCampaign extends Component {
-    constructor(props) {
-super()
-      }
-    render() {
-        const { match } = this.props;
+  constructor(props) {
+    super()
+
+    this.state = {
+      campaigns: []
+    };
+  }
+
+  componentDidMount() {
+    let url = Config.API + '/campaigns';
+
+    fetch(url).then(response => response.json()).then(({campaigns}) => {
+      this.setState({
+        campaigns
+      });
+    });
+  }
+
+  render() {
+    const {match} = this.props;
+
+    function Campaigns(props) {
+      const listItems = props.campaigns.map(({name, description, streak, min_price}) =>
+        <tr>
+          <td>{name}</td>
+          <td>{description}</td>
+          <td>{streak}</td>
+          <td>{min_price}</td>
+        </tr>
+      );
       return (
-        <div className="ListOfCampaigns">  
-            <Row className="AddNewCampaign">
-                <Button className="ButtonNewCampaign">
-                    <Link to={`${match.url}/new`}>add new campaign</Link>
-                </Button>
-            </Row> 
-            <Row className="AllCampaigns">
-                <Table responsive>
-                    <thead>
-                        <tr>
-                        <th>Campaign name</th>
-                        <th>Campaign description</th>
-                        <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <td><Link to={`${match.url}/1`}>CampaignName</Link></td>
-                        <td>Table cell</td>
-                        <td><Button className="ButtonDeactivate">deactivate</Button></td>    
-                        </tr>
-                        <tr>
-                        <td><Link to={`${match.url}/2`}>CampaignName</Link></td>
-                        <td>Table cell</td>
-                        <td><Button className="ButtonDeactivate">deactivate</Button></td>
-                        </tr>
-                    </tbody>
-                </Table>              
-            </Row>
-        </div>  
+        <tbody>{listItems}</tbody>
       );
     }
+
+    return (
+      <div className="ListOfCampaigns">
+        <Row className="AddNewCampaign">
+          <Button className="ButtonNewCampaign">
+            <Link to={`${match.url}/new`}>add new campaign</Link>
+          </Button>
+        </Row>
+        <Row className="AllCampaigns">
+          <Table responsive>
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Streak</th>
+              <th>Min price</th>
+            </tr>
+            </thead>
+            <Campaigns campaigns={this.state.campaigns} />
+          </Table>
+        </Row>
+      </div>
+    );
   }
+}
