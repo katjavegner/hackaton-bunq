@@ -52,7 +52,7 @@ export default class FullCampaign extends Component {
               <th>Min price</th>
             </tr>
             </thead>
-            <Campaigns campaigns={this.state.campaigns} />
+            <Campaigns campaigns={this.state.campaigns || []} />
           </Table>
         </Row>
         <Row className="AddNewCampaign">

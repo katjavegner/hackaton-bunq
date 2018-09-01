@@ -9,16 +9,22 @@
   margin: 0 auto;
 }
 
-ul{
+ul {
   text-align: left;
   padding: 0;
   margin: 20px auto;
 }
 
-ul.leftList li, ul.rightList li {
+ul.leftList li {
   text-align: center;
   list-style-type: none;
   margin: 22px auto;
+}
+
+ul.rightList li {
+  text-align: center;
+  list-style-type: none;
+  margin: 12px auto;
 }
 
 ul.leftList li a, ul.rightList li a {
