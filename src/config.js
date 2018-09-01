@@ -1,3 +1,3 @@
 module.exports = {
-  API: "https://streakr.alwx.me"
+  API: "http://streakr.alwx.me"
 };
